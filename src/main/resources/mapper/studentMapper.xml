@@ -11,5 +11,10 @@
     <select id="getStudent" parameterType="Integer" resultType="StudentEntity" resultMap="studentResultMap">
         select * from student where student_id = #{studentId}
     </select>
+    
+    <select id="getStudents" resultMap="studentResultMap">
+        select * from student;
+    </select>
+    
       
 </mapper> 

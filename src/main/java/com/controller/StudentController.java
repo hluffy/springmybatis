@@ -22,5 +22,13 @@ public class StudentController {
 		result = studentService.getStudent(20161129);
 		return result;
 	}
+	
+	@RequestMapping("/students.ll")
+	@ResponseBody
+	public Result getStudents(){
+		Result result = new Result();
+		result = studentService.getStudents();
+		return result;
+	}
 
 }

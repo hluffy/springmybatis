@@ -1,5 +1,8 @@
 package com.serviceImp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -21,6 +24,16 @@ public class StudentServiceImp implements StudentService{
 		result.setData(student);
 		result.setStatus(0);
 		result.setMsg("操作成功");
+		return result;
+	}
+
+	public Result getStudents() {
+		Result result = new Result();
+		List<StudentEntity> infos = new ArrayList<StudentEntity>();
+		infos = smDao.getStudents();
+		result.setData(infos);
+		result.setStatus(0);
+		result.setMsg("操作成功");;
 		return result;
 	}
 
