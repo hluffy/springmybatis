@@ -19,7 +19,7 @@ public class ScoreController {
 	@ResponseBody
 	public Result getScore(){
 		Result result = new Result();
-		result = scoreService.getScore(20161131);
+		result = scoreService.getScore("student1");
 		return result;
 	}
 

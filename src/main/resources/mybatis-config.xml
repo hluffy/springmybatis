@@ -3,9 +3,11 @@
 <configuration>  
     <typeAliases>
         <typeAlias alias="StudentEntity" type="com.entity.StudentEntity"/>
+        <typeAlias alias="ScoreEntity" type="com.entity.ScoreEntity"/>
     </typeAliases>
     <mappers>
         <mapper resource="mapper/studentMapper.xml"/>
+        <mapper resource="mapper/scoreMapper.xml"></mapper>
     </mappers>
 </configuration> 
 

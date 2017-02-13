@@ -15,10 +15,10 @@ public class ScoreServiceImp implements ScoreService{
 	@Resource
 	private ScoreMapperDao smDao;
 
-	public Result getScore(Integer studentId) {
+	public Result getScore(String studentName) {
 		Result result = new Result();
 		ScoreEntity score = new ScoreEntity();
-		score = smDao.getScore(studentId);
+		score = smDao.getScore(studentName);
 		result.setData(score);
 		result.setStatus(0);
 		result.setMsg("²Ù×÷³É¹¦");

@@ -7,11 +7,18 @@
 		<result property="math" column="math"></result>
         <result property="english" column="english"/>
         <result property="chinese" column="chinese"></result>
-<!--         <association property="student" column="student_id"  resultMap="studentResultMap"/> -->
+        <association property="student" column="student_id" resultMap="studentResultMap"/>
     </resultMap>
     
-    <select id="getScore" parameterType="Integer" resultType="ScoreEntity" resultMap="scoreResultMap">
-        select * from score where student_id = #{studentId}
+    <resultMap type="StudentEntity" id="studentResultMap">
+        <id property="studentId" column="student_id"></id>
+        <result property="studentName" column="student_name"/>
+        <result property="classNum" column="class_num"></result>
+    </resultMap>
+    
+    <select id="getScore" parameterType="String" resultType="ScoreEntity" resultMap="scoreResultMap">
+        select * from score left join student on score.student_id = student.student_id where student_name = #{studentName}
+<!--         select st.student_id,st.student_name,st.class_num,sc.math,sc.english,sc.chinese from score sc,student st where sc.student_id = st.student_id and student_name = #{studentName} -->
     </select>
       
 </mapper> 
